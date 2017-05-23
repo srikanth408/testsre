@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myFunction(){
+
+	var name=document.myform.fname.value; 
+    var surname=document.myform.lname.value;
+	var x=document.myform.email.value;  
+    var atposition=x.indexOf("@");  
+    var dotposition=x.lastIndexOf(".");
+	var num=document.myform.phone.value;
+	var zip=document.myform.zipcode.value;
+	var sel = document.getElementById("city");
+	var selectedText = sel.options[sel.selectedIndex].value;
+	
+console.log('name = '+name);
+console.log('surname = '+surname);
+console.log('email = '+x);
+console.log('phone = '+num);
+console.log('state = '+selectedText);
+console.log('zipcode = '+zip);
+
+if (name==null || name==""){  
+  alert("Name can't be blank");  
+  return false;
+}else if(surname==null || surname==""){ 
+  alert("surname can't be null");  
+  return false;  
+  }else if ( x==null || x=="" ||atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+  return false;
+  }else if (num==null|| num=="" ||num.length > 10 || num.length < 10){
+    alert("please enter valid phone number( i.e 10 digit phonenumber)");
+    return false;
+	}else if(document.myform.city.selectedIndex=="")
+{
+alert ( "Please select state!");
+return false;
+}else if (zip== null || zip =="" || zip.length > 6 || zip.length < 6 ){
+    alert("please enter valid zipcode (i.e 6 digit zipcode) ");
+    return false;
+}
+
+//get the selected option
+
+//alert("You have selected : "+selectedText);
+
+return true;
+		
+}  
+
+</script>
+<style>
+h1 
+{background-color:orange;
+padding:30px;
+}
+h2{
+background-color:rgb(200,200,200);
+padding:20px;
+}
+.table{
+float:left;
+width:100px;
+background-color:skyblue;
+border:2px solid DeepSkyBlue;
+}
+.text{
+border:2px solid DeepSkyBlue;
+height:16px
+}
+.help{
+float:right;
+text-align:center;
+background-color:DeepSkyBlue;
+background-image: initial;
+width:300px;
+color:black;
+}
+.header{
+    float:right;
+	text-align:center;
+	background-color:GhostWhite;
+	color:black;
+	overflow:hidden;
+	}
+
+h3{ color:DeepSkyBlue;
+}
+.newspaper {
+    column-count: 2;
+    column-gap: 20px;
+    column-rule-style: dotted;
+	border-right: 20px solid orange;
+	padding:20px;
+	border-left: 20px solid orange; 
+	border-bottom: 20px solid orange;
+}
+</style>
+</head>
+
+<body>
+
+<img src="images/logo.png" style="float:left;">
+<strong>K<sup>12</sup><div class="help">
+Questions?Call Us:855-652-<br>3925
+</div>
+<br>INTERNATIONAL<br>ACADEMY</strong>
+
+
+<div>
+<span class="header">
+<b>TAKE THE FIRST <br> STEP</b> <br> Fill out the short form below to receive more <br>information on the k12 international Academy
+<br> programs we have for your child.<br><br> <b> Which Grade Level Are You Interested In? </b><br><br>
+
+<b><input type="radio" name="K-8" value="K-8"> K-8 <input type="radio" name="9-12" value="9-12"> 9-12 <input type="radio" name="Both" value="Both">Both</b>
+<br><br>
+<form name="myform"  method="post"  class="header">
+<span class="table">Fisrt Name:</span>
+<input id="demo" class="text" type="text" name="fname">
+<br><br>
+<span class="table">Last Name:</span>
+<input class="text" type="text" name="lname">
+<br><br>
+<span class="table">Email:</span>
+<input class="text" type="email" name="email">
+<br><br>
+<span class="table">Phone:</span>
+<input class="text" type="number" name="phone">
+<br><br>
+<span class="table">State:</span>
+
+<select style="border:2px solid DeepSkyBlue;height:22px;width:145px;" name="city" id="city" >
+<option value="Select">Select</option>
+<option value="Andra Pradesh">Andra Pradesh</option>
+<option value="Telangana">Telangana</option>
+<option value="Delhi">Delhi</option> 
+</select>
+<br><br>
+<span class="table">Zip Code:</span>
+<input class="text" type="number" name="zipcode">
+<br><br>
+<img src="images/arrow.png" style="float:left;">
+<input style="background-color:Red;width:150px;height:40px;margin-right:70px;" type="button" onclick="myFunction()" value="Submit Request"></form>
+</span>
+</div>
+
+<br><br>
+<h1 >AWAKEN THE POWER OF LEARNING </h1>
+<img src="images/cont-pic.png" style="width:1000px;height:300px;"/>
+<h2> K12 INTERNATIONAL ACADEMY ALLOW STUDENTS TO REACH THEIR GOALS </h2>
+
+<div class="newspaper" > 
+
+<p><b>K<sup>12</sup> International Acadamy is a fully accredited,<br>private online K-12 school that liberates
+<br>students from rigid schedules,classes that move<br>too fast or too slow, bullying and other facters<br>that stand in the way of success.</b></p>
+
+<p> Combining K<sup>12</sup>'s award winning curriculum with<br>exceptional teachers,an amazing support team,and<br>an individualized 
+learning plan for every student<br>the K12 International Academy puts in motion a<br>complete program tailored to helping your 
+child<br>learn in a flexible and innovative way, at his or her <br>own pace.
+
+<h3>individualizes online education</h3>
+<p>an individualized learing plan for your child and a straightforward way to stay on<br>cource makes 
+The K<sup>12</sup>International academy stand apart other private <br>scholls.</p>
+<h3> Award winning curriculum </h3> 
+<p> Recognisized as the gold standard in K-12 online education. The K12 curriculum is <br>created by some of the finest minds in education</p> 
+<h3> Extensive support </h3> 
+<p> We surround you and your child with an amazing support team of teachers,<br>Acadamics coaches and counsclors.</p>
+<h3> Full time and Part time Enrollment </h3>
+<p>Students can enroll full-time or in one of more than 240 dynamic online courses.</div>
+
+</body>
+</html>
+
